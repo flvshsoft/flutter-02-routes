@@ -102,25 +102,40 @@ class HomeScreenState extends State<HomeScreen> {
                   Text('Icon Apps'),
                   Row(
                     children: [
-                      Card(
-                        color: Colors.pink,
-                        child: Padding(
-                          padding: EdgeInsets.all(10),
-                          child: Icon(
-                            Icons.receipt,
-                            color: Colors.white,
-                            size: 40,
+                      GestureDetector(
+                        onTap: () {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              content: Text('Hello World'),
+                              duration: Duration(seconds: 2),
+                            ),
+                          );
+                        },
+                        child: Card(
+                          color: Colors.pink,
+                          child: Padding(
+                            padding: EdgeInsets.all(10),
+                            child: Icon(
+                              Icons.receipt,
+                              color: Colors.white,
+                              size: 40,
+                            ),
                           ),
                         ),
                       ),
-                      Card(
-                        color: Colors.purple,
-                        child: Padding(
-                          padding: EdgeInsets.all(10),
-                          child: Icon(
-                            Icons.receipt_long,
-                            color: Colors.white,
-                            size: 40,
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.pushNamed(context, '/tagihan');
+                        },
+                        child: Card(
+                          color: Colors.purple,
+                          child: Padding(
+                            padding: EdgeInsets.all(10),
+                            child: Icon(
+                              Icons.receipt_long,
+                              color: Colors.white,
+                              size: 40,
+                            ),
                           ),
                         ),
                       ),
