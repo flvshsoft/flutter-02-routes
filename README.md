@@ -62,7 +62,8 @@ lib/features/home/screens/home_screen.dart
 
 
 
-
+# Shimmer
+  shimmer: ^2.0.0
 
 
 

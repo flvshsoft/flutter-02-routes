@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shimmer/shimmer.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -57,8 +58,6 @@ class HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                   ),
-
-                  /// Welcome Text
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -78,20 +77,94 @@ class HomeScreenState extends State<HomeScreen> {
               ),
             ),
             SizedBox(
-              height: 50,
-              child: Text('Banner'),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('Banner'),
+                  Shimmer.fromColors(
+                    baseColor: Colors.grey[300]!,
+                    highlightColor: Colors.grey[100]!,
+                    child: Row(
+                      children: [
+                        Card(
+                          color: Colors.green,
+                          child: Padding(
+                            padding: EdgeInsets.all(20),
+                            child: Icon(
+                              Icons.person,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Lorem Ipsum Dolor Sit Amet', // Menampilkan data yang dimuat
+                              style: const TextStyle(
+                                  fontSize: 14, fontWeight: FontWeight.bold),
+                            ),
+                            Text(
+                              'Hello World', // Menampilkan data yang dimuat
+                              style: const TextStyle(
+                                  fontSize: 14, fontWeight: FontWeight.bold),
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
             SizedBox(
-              height: 50,
-              child: Text('Icon Apps'),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('Icon Apps'),
+                  Shimmer.fromColors(
+                    baseColor: Colors.grey[300]!,
+                    highlightColor: Colors.grey[100]!,
+                    child: Row(
+                      children: List.generate(5, (index) {
+                        return Card(
+                          color: Colors.green,
+                          child: Padding(
+                            padding: EdgeInsets.all(20),
+                            child: Icon(
+                              Icons.person,
+                              color: Colors.white,
+                            ),
+                          ),
+                        );
+                      }),
+                    ),
+                  ),
+                ],
+              ),
             ),
             SizedBox(
-              height: 50,
-              child: Text('Informasi'),
-            ),
-            SizedBox(
-              height: 50,
-              child: Text('ListView'),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('Informasi'),
+                  Shimmer.fromColors(
+                    baseColor: Colors.grey[300]!,
+                    highlightColor: Colors.grey[100]!,
+                    child: Column(
+                      children: List.generate(5, (index) {
+                        return SizedBox(
+                          height: 100,
+                          width: double.infinity,
+                          child: Card(
+                            child: Text('Flashsoft Indonesia'),
+                          ),
+                        );
+                      }),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ],
         ),
