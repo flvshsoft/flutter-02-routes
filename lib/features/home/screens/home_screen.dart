@@ -84,34 +84,12 @@ class HomeScreenState extends State<HomeScreen> {
                   Shimmer.fromColors(
                     baseColor: Colors.grey[300]!,
                     highlightColor: Colors.grey[100]!,
-                    child: Row(
-                      children: [
-                        Card(
-                          color: Colors.green,
-                          child: Padding(
-                            padding: EdgeInsets.all(20),
-                            child: Icon(
-                              Icons.person,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Lorem Ipsum Dolor Sit Amet', // Menampilkan data yang dimuat
-                              style: const TextStyle(
-                                  fontSize: 14, fontWeight: FontWeight.bold),
-                            ),
-                            Text(
-                              'Hello World', // Menampilkan data yang dimuat
-                              style: const TextStyle(
-                                  fontSize: 14, fontWeight: FontWeight.bold),
-                            ),
-                          ],
-                        )
-                      ],
+                    child: SizedBox(
+                      height: 100,
+                      width: double.infinity,
+                      child: Card(
+                        child: Text('Flashsoft Indonesia'),
+                      ),
                     ),
                   ),
                 ],
@@ -122,23 +100,49 @@ class HomeScreenState extends State<HomeScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text('Icon Apps'),
-                  Shimmer.fromColors(
-                    baseColor: Colors.grey[300]!,
-                    highlightColor: Colors.grey[100]!,
-                    child: Row(
-                      children: List.generate(5, (index) {
-                        return Card(
-                          color: Colors.green,
-                          child: Padding(
-                            padding: EdgeInsets.all(20),
-                            child: Icon(
-                              Icons.person,
-                              color: Colors.white,
-                            ),
+                  Row(
+                    children: [
+                      Card(
+                        color: Colors.pink,
+                        child: Padding(
+                          padding: EdgeInsets.all(10),
+                          child: Icon(
+                            Icons.receipt,
+                            color: Colors.white,
+                            size: 40,
                           ),
-                        );
-                      }),
-                    ),
+                        ),
+                      ),
+                      Card(
+                        color: Colors.purple,
+                        child: Padding(
+                          padding: EdgeInsets.all(10),
+                          child: Icon(
+                            Icons.receipt_long,
+                            color: Colors.white,
+                            size: 40,
+                          ),
+                        ),
+                      ),
+                      Shimmer.fromColors(
+                        baseColor: Colors.grey[300]!,
+                        highlightColor: Colors.grey[100]!,
+                        child: Row(
+                          children: List.generate(3, (index) {
+                            return Card(
+                              color: Colors.green,
+                              child: Padding(
+                                padding: EdgeInsets.all(20),
+                                child: Icon(
+                                  Icons.person,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            );
+                          }),
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
@@ -156,8 +160,40 @@ class HomeScreenState extends State<HomeScreen> {
                         return SizedBox(
                           height: 100,
                           width: double.infinity,
-                          child: Card(
-                            child: Text('Flashsoft Indonesia'),
+                          child: Row(
+                            children: [
+                              Card(
+                                color: Colors.green,
+                                child: Padding(
+                                  padding: EdgeInsets.all(20),
+                                  child: Icon(
+                                    Icons.person,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  SizedBox(height: 20),
+                                  Text(
+                                    'Lorem Ipsum Dolor Sit Amet Flashsoft', // Menampilkan data yang dimuat
+                                    style: const TextStyle(
+                                        backgroundColor: Colors.red,
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  SizedBox(height: 10),
+                                  Text(
+                                    'Hello World Flashsoft', // Menampilkan data yang dimuat
+                                    style: const TextStyle(
+                                        backgroundColor: Colors.red,
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                ],
+                              )
+                            ],
                           ),
                         );
                       }),
