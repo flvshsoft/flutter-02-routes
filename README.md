@@ -31,12 +31,41 @@ flutter create oncard_saku
 
 ## JDK
 <p>
-flutter config --jdk-dir=/Users/yuhayalissera/Library/Java/JavaVirtualMachines/temurin-17.0.13/Contents/Home
+flutter config --jdk-dir=/Library/Java/JavaVirtualMachines/temurin-17.0.13/Contents/Home
 </p>
 
 
 ## Build
 flutter build apk --debug
+
+# Struktur Project
+
+lib/
+├── main.dart              // Entry point aplikasi Flutter
+├── routes/
+│   ├── app_routes.dart    // Definisi rute untuk navigasi
+├── features/
+│   ├── home/
+│   │   ├── home_page.dart // Widget halaman utama (Page Level)
+│   │   ├── screens/
+│   │   │   ├── home_screen.dart // Tampilan utama dalam halaman home (Screen Level)
+└── ├── auth/           
+
+
+## Buat Folder dan File otomatis di Mac
+mkdir -p lib/features/home/screens lib/features/home/widgets lib/routes 
+
+touch lib/main.dart \
+routes/app_routes.dart \
+lib/features/home/home_page.dart \
+lib/features/home/screens/home_screen.dart
+
+
+
+
+
+
+
 
 
 A new Flutter project.
