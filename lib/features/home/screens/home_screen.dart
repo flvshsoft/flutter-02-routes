@@ -45,15 +45,54 @@ class HomeScreenState extends State<HomeScreen> {
             // section info
             Padding(
               padding: const EdgeInsets.all(5.0),
-              child: Text(
-                'Hello World', // Menampilkan data yang dimuat
-                style:
-                    const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+              child: Row(
+                children: [
+                  Card(
+                    color: Colors.green,
+                    child: Padding(
+                      padding: EdgeInsets.all(10),
+                      child: Icon(
+                        Icons.person,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+
+                  /// Welcome Text
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Selamat Datang', // Menampilkan data yang dimuat
+                        style: const TextStyle(
+                            fontSize: 14, fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        'Hello World', // Menampilkan data yang dimuat
+                        style: const TextStyle(
+                            fontSize: 14, fontWeight: FontWeight.bold),
+                      ),
+                    ],
+                  )
+                ],
               ),
             ),
-            // FutureBuilder untuk menampilkan data
-
-            SizedBox(height: 50),
+            SizedBox(
+              height: 50,
+              child: Text('Banner'),
+            ),
+            SizedBox(
+              height: 50,
+              child: Text('Icon Apps'),
+            ),
+            SizedBox(
+              height: 50,
+              child: Text('Informasi'),
+            ),
+            SizedBox(
+              height: 50,
+              child: Text('ListView'),
+            ),
           ],
         ),
       ),
