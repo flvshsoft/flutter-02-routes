@@ -66,6 +66,8 @@ lib/features/home/screens/home_screen.dart
   shimmer: ^2.0.0
 
 
+# api
+  http: ^1.2.0
 
 
 
