@@ -5,14 +5,16 @@ import 'package:oncard_saku/core/widgets/index.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:http/http.dart' as http;
 
-class TagihanScreen extends StatefulWidget {
-  const TagihanScreen({super.key});
+class TagihanDetailScreen extends StatefulWidget {
+  final dynamic siswa;
+
+  const TagihanDetailScreen({super.key, required this.siswa});
 
   @override
-  TagihanScreenState createState() => TagihanScreenState();
+  TagihanDetailScreenState createState() => TagihanDetailScreenState();
 }
 
-class TagihanScreenState extends State<TagihanScreen> {
+class TagihanDetailScreenState extends State<TagihanDetailScreen> {
   @override
   void initState() {
     super.initState();
@@ -28,7 +30,8 @@ class TagihanScreenState extends State<TagihanScreen> {
           Navigator.pop(context);
         },
       ),
-      title: Text('Tagihan', style: TextStyle(color: Colors.white)),
+      title: Text('Tagihan Detail ${widget.siswa['nama']}',
+          style: TextStyle(color: Colors.white)),
     );
   }
 
@@ -127,7 +130,7 @@ class TagihanScreenState extends State<TagihanScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Text('Informasi'),
+            Text('Informasi - ${widget.siswa['nama']}'),
             viewApi(),
           ],
         ),
