@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:oncard_saku/core/widgets/index.dart';
+import 'package:oncard_saku/features/home/widgets/siswa_widget.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:http/http.dart' as http;
 
@@ -18,21 +19,6 @@ class TagihanDetailScreenState extends State<TagihanDetailScreen> {
   @override
   void initState() {
     super.initState();
-  }
-
-  AppBar sectionAppBar() {
-    return AppBar(
-      backgroundColor: Color(0xFF373466),
-      leading: IconButton(
-        icon: Icon(Icons.chevron_left), // Icon di kiri
-        color: Colors.white,
-        onPressed: () {
-          Navigator.pop(context);
-        },
-      ),
-      title: Text('Tagihan Detail ${widget.siswa['nama']}',
-          style: TextStyle(color: Colors.white)),
-    );
   }
 
   Future<List<dynamic>> fetchApi() async {
@@ -52,7 +38,7 @@ class TagihanDetailScreenState extends State<TagihanDetailScreen> {
         // print(data);
         return data;
       } else {
-        print(response);
+        // print(response);
         throw Exception('Gagal mengambil data: ${response.statusCode}');
       }
     } catch (e) {
@@ -124,7 +110,8 @@ class TagihanDetailScreenState extends State<TagihanDetailScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: sectionAppBar(),
+      appBar: AppBarWidget(
+          context: context, icon: Icons.chevron_left, title: 'Tagihan Detail'),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(10.0),
         child: Column(
